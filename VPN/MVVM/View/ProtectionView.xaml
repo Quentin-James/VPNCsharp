@@ -9,10 +9,64 @@
                 Background="#252525">
              
     <Grid>
-        <TextBlock Text="ProtectionView"
-                   FontSize="28"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   Foreground="LightGray"/>
+        <Grid.RowDefinitions>
+            <!-- Première ligne doit prendre l'espace disponible -->
+            <RowDefinition Height="*" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <Image Source="https://i.imgur.com/bx3bBLj.png"
+               Stretch="UniformToFill"
+               VerticalAlignment="Stretch"
+               HorizontalAlignment="Stretch"
+               RenderOptions.BitmapScalingMode="Fant"
+               Grid.RowSpan="2"
+               ToolTip="https://i.imgur.com/bx3bBLj.png " >
+            <Image.OpacityMask>
+                <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                    <GradientStop Offset="0" Color="#FF000000" />
+                    <GradientStop Offset="1" Color="#00000000" />
+                </LinearGradientBrush>
+            </Image.OpacityMask>
+            <Image.Effect>
+                <BlurEffect Radius="10"></BlurEffect>
+            </Image.Effect>
+        </Image>
+        <ListView ItemsSource="{Binding Servers}"
+                  Width="250"
+                  Margin="0,20,0,0"
+                  Background="#252525"
+                  BorderThickness="0"
+                  ScrollViewer.CanContentScroll="False">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="Padding" Value="6,4"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="Center"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" Value="#333333"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#2A2A2A"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+        <Button Width="250" Height="45" Content="Connect" Grid.Row="1"
+                HorizontalAlignment="Center" VerticalAlignment="Center"
+                Background="#000000" Foreground="White" BorderThickness="0" Cursor="Hand"/>
+        
     </Grid>
 </UserControl>

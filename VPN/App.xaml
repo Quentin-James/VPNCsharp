@@ -8,8 +8,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                
                 <ResourceDictionary Source="MVVM/Themes/TitleButton.Nord.xaml"/>
+                <ResourceDictionary Source="MVVM/Themes/MenuButton.Nord.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
             <DataTemplate DataType="{x:Type viewModel:ProtectionViewModel}">
