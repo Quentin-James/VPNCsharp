@@ -36,7 +36,7 @@
             </StackPanel>
         </Grid>
     </Border>
-    <Border Width="48" HorizontalAlignment="Left" Background="#272E2E">
+    <Border Width="60" HorizontalAlignment="Left" Background="#272E2E">
       <Border.Triggers>
         <EventTrigger RoutedEvent="Border.MouseEnter">
           <BeginStoryboard>
@@ -58,9 +58,9 @@
         </EventTrigger>
       </Border.Triggers>
       <StackPanel>
-        <RadioButton extensions:Extensions.Icon="" Content="🛡️️" FontSize="16" FontWeight="Normal" Foreground="LightGray" IsChecked="True" Command="{Binding ShowProtectionViewCommand}" />
-        <RadioButton Content="VPN" FontSize="16" FontWeight="Normal" Foreground="LightGray" />
+        <RadioButton Content="🛡️" FontSize="16" FontWeight="Normal" Foreground="LightGray" IsChecked="True" Command="{Binding ShowProtectionViewCommand}" />
         <RadioButton Content="⚙️" FontSize="16" FontWeight="Normal" Foreground="LightGray" Command="{Binding ShowSettingsViewCommand}"/>
+        <RadioButton Content="⛔VPN" FontSize="16" FontWeight="Normal" Foreground="LightGray" Command="{Binding DisconnectVpnCommand}"/>
       </StackPanel>
     </Border>
     <ContentPresenter Content="{Binding CurrentView}"></ContentPresenter>

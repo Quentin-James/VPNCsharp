@@ -4,9 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:VPN.MVVM.View"
+             xmlns:vm="clr-namespace:VPN.MVVM.ViewModel"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300"
-                Background="#252525">
+             d:DataContext="{d:DesignInstance Type=vm:ProtectionViewModel}"
+             Background="#252525">
              
     <Grid>
         <Grid.RowDefinitions>
@@ -14,7 +16,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="100" />
         </Grid.RowDefinitions>
-        <Image Source="https://i.imgur.com/bx3bBLj.png"
+        <Image Source="../../Img/MapWorld.jpg"
                Stretch="UniformToFill"
                VerticalAlignment="Stretch"
                HorizontalAlignment="Stretch"
@@ -32,11 +34,26 @@
             </Image.Effect>
         </Image>
         <ListView ItemsSource="{Binding Servers}"
+                  SelectedItem="{Binding SelectedServer, Mode=TwoWay}"
                   Width="250"
                   Margin="0,20,0,0"
                   Background="#252525"
                   BorderThickness="0"
                   ScrollViewer.CanContentScroll="False">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="4" MinHeight="25">
+                        <Image Width="34"
+                               RenderOptions.BitmapScalingMode="Fant"
+                               Source="{Binding FlagPath}" />
+                        <TextBlock Text="{Binding Country}"
+                                   Margin="4,0,0,0"
+                                   VerticalAlignment="Center"
+                                   Foreground="LightGray" >
+                            </TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="Background" Value="Transparent"/>
@@ -64,9 +81,17 @@
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
+        <TextBlock Text="{Binding ConnectionStatus}"
+                   Foreground="white"
+                   Grid.Row="1"
+                   HorizontalAlignment="Center"
+                   FontFamily="Consolas"
+                   Margin="0,9,0,7">
+            
+        </TextBlock>
         <Button Width="250" Height="45" Content="Connect" Grid.Row="1"
-                HorizontalAlignment="Center" VerticalAlignment="Center"
-                Background="#000000" Foreground="White" BorderThickness="0" Cursor="Hand"/>
+                Style="{StaticResource ConnectButtonNordStyle}"
+                Command="{Binding ConnectCommand}"/>
         
     </Grid>
 </UserControl>

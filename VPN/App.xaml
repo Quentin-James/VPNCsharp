@@ -4,12 +4,16 @@
              xmlns:local="clr-namespace:VPN"
              xmlns:viewModel="clr-namespace:VPN.MVVM.ViewModel"
              xmlns:view="clr-namespace:VPN.MVVM.View"
-             StartupUri="MVVM/View/MainWindow.xaml">
+             StartupUri="MVVM/View/MainWindow.xaml"
+             >
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="MVVM/Themes/TitleButton.Nord.xaml"/>
                 <ResourceDictionary Source="MVVM/Themes/MenuButton.Nord.xaml"/>
+                <ResourceDictionary Source="MVVM/Themes/ConnectButton.Nord.xaml"/>
+                <ResourceDictionary Source="MVVM/Themes/ServerListTheme.Nord.xaml"/>
+
             </ResourceDictionary.MergedDictionaries>
             
             <DataTemplate DataType="{x:Type viewModel:ProtectionViewModel}">

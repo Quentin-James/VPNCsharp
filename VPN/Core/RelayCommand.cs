@@ -1,4 +1,4 @@
-﻿using System.Windows.Input;
+﻿﻿using System.Windows.Input;
 
 namespace VPN.Core;
 
@@ -22,5 +22,10 @@ public class RelayCommand(Action<object?> execute, Func<object?, bool>? canExecu
     {
         add => CommandManager.RequerySuggested += value;
         remove => CommandManager.RequerySuggested -= value;
+    }
+
+    public void RaiseCanExecuteChanged()
+    {
+        CommandManager.InvalidateRequerySuggested();
     }
 }

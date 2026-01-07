@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
+using System.Diagnostics;
 using VPN.Core;
 
 namespace VPN.MVVM.ViewModel;
@@ -24,7 +25,72 @@ internal class MainViewModel : INotifyPropertyChanged
         OnPropertyChanged(propertyName);
         return true;
     }
+    private static void DisconnectVpn()
+    {
+        try
+        {
+            var psi = new ProcessStartInfo
+            {
+                FileName = "rasdial.exe",
+                Arguments = "/disconnect",
+                CreateNoWindow = true,
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true
+            };
 
+            using var process = Process.Start(psi);
+            process?.WaitForExit();
+            
+            MessageBox.Show("VPN déconnecté avec succès.", "Déconnexion", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+        catch (Exception e)
+        {
+            MessageBox.Show($"Erreur lors de la déconnexion : {e.Message}", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+    }
+    private static void StopVpnProcess()
+    {
+        try
+        {
+            var currentId = Environment.ProcessId;
+            var procs = Process.GetProcessesByName("VPN");
+            foreach (var p in procs)
+            {
+                if (p.Id == currentId) continue;
+
+                try
+                {
+                    if (p.HasExited) continue;
+
+                    // Essaie une fermeture propre
+                    if (p.CloseMainWindow())
+                    {
+                        if (!p.WaitForExit(2000))
+                            p.Kill();
+                    }
+                    else
+                    {
+                        // Si pas d'interface principale, tue le processus
+                        p.Kill();
+                    }
+                }
+                catch
+                {
+                    // Ignorer les erreurs individuelles de processus
+                }
+                finally
+                {
+                    p.Dispose();
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
     /* commands */
     public RelayCommand MoveWindowCommand { get; set; }
     public RelayCommand ShutWindow { get; set; }
@@ -32,16 +98,16 @@ internal class MainViewModel : INotifyPropertyChanged
     public RelayCommand MinWindow { get; set; }
     public RelayCommand ShowProtectionViewCommand { get; set; }
     public RelayCommand ShowSettingsViewCommand { get; set; }
-
+    public RelayCommand DisconnectVpnCommand { get; set; }
     private object? _currentView;
     public object? CurrentView
     {
         get => _currentView;
         set => SetProperty(ref _currentView, value);
     }
-    
-    public ProtectionViewModel ProtectionVM { get; set; }
-    public SettingsViewModel SettingsVM { get; set; }
+
+    private ProtectionViewModel ProtectionVM { get; set; }
+    private SettingsViewModel SettingsVM { get; set; }
 
     public MainViewModel()
     {
@@ -74,6 +140,8 @@ internal class MainViewModel : INotifyPropertyChanged
         
         ShutWindow = new RelayCommand(_ =>
         {
+            DisconnectVpn();
+            StopVpnProcess();
             Application.Current?.MainWindow?.Close();
         });
         
@@ -101,6 +169,11 @@ internal class MainViewModel : INotifyPropertyChanged
         ShowSettingsViewCommand = new RelayCommand(_ =>
         {
             CurrentView = SettingsVM;
+        });
+        
+        DisconnectVpnCommand = new RelayCommand(_ =>
+        {
+            DisconnectVpn();
         });
     }
 }

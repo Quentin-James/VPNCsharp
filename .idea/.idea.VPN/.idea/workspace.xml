@@ -4,12 +4,32 @@
     <projectFile>VPN/VPN.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f18de14b-4950-4969-99a9-286b1c92d9c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/VPN/Core/Extensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VPN/MVVM/Themes/MenuButton.Nord.xaml" afterDir="false" />
+    <list default="true" id="fa3e0c79-df1a-414f-8951-fc1102e4f467" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/VPN/ANALYSIS_PROJECT_REPORT.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Core/ProtectionManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Core/ServerPersistenceService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Core/ServerService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Img/Flags/download_flags.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/MVVM/Model/CountryFlag.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/MVVM/Model/ServerEntry.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/MVVM/Model/ServerModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/MVVM/Model/ServersEntry.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/MVVM/Themes/ServerListTheme.Nord.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VPN/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VPN/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VPN/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VPN/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/App.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VPN/Core/ObservableObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/Core/ObservableObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VPN/Core/RelayCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/Core/RelayCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VPN/MVVM/Themes/ConnectButton.Nord.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/MVVM/Themes/ConnectButton.Nord.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VPN/MVVM/View/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/MVVM/View/MainWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VPN/MVVM/View/ProtectionView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/MVVM/View/ProtectionView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VPN/MVVM/View/SettingsView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/MVVM/View/SettingsView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VPN/MVVM/View/SettingsView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/MVVM/View/SettingsView.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VPN/MVVM/ViewModel/MainViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/MVVM/ViewModel/MainViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VPN/MVVM/ViewModel/ProtectionViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/MVVM/ViewModel/ProtectionViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VPN/MVVM/ViewModel/SettingsViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/MVVM/ViewModel/SettingsViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VPN/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/MainWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VPN/VPN.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/VPN.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,35 +43,49 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/VPN/Core/Extensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VPN/App.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VPN/Core/ObservableObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VPN/Core/ProtectionManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VPN/Core/ServerService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VPN/MVVM/Model/CountryFlag.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VPN/MVVM/Model/ServerEntry.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VPN/MVVM/Model/ServerModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VPN/MVVM/Model/ServersEntry.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VPN/MVVM/Themes/ConnectButton.Nord.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VPN/MVVM/Themes/ServerListTheme.Nord.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VPN/MVVM/View/MainWindow.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VPN/MVVM/View/ProtectionView.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VPN/MVVM/View/ProtectionView.xaml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VPN/MVVM/ViewModel/ProtectionViewModel.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
-  <component name="ProjectId" id="37pdEloHYoo8puTjOTnEUH1M1jb" />
+  <component name="ProjectId" id="37t6ICqkzpeWPFpKcKEiXicIrA2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    ".NET Project.Unnamed.executor": "Run",
     ".NET Project.VPN.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "master",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "advanced.settings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
     <configuration name="VPN" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/VPN/bin/Debug/net10.0-windows/VPN.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/VPN/bin/Debug/net10.0-windows" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
@@ -64,7 +98,7 @@
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
       <option name="PROJECT_KIND" value="DotNetCore" />
-      <option name="PROJECT_TFM" value="" />
+      <option name="PROJECT_TFM" value="net10.0-windows" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -72,42 +106,23 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f18de14b-4950-4969-99a9-286b1c92d9c8" name="Changes" comment="" />
-      <created>1767603837855</created>
+      <changelist id="fa3e0c79-df1a-414f-8951-fc1102e4f467" name="Changes" comment="" />
+      <created>1767709940238</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1767603837855</updated>
-      <workItem from="1767603840779" duration="2007000" />
-      <workItem from="1767605946131" duration="8187000" />
+      <updated>1767709940238</updated>
+      <workItem from="1767709942750" duration="13698000" />
+      <workItem from="1767772930952" duration="2615000" />
+      <workItem from="1767778930522" duration="7373000" />
+      <workItem from="1767787314947" duration="7487000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
-  <component name="VcsManagerConfiguration">
-    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
-          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
-          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
-          <option name="timeStamp" value="2" />
-        </breakpoint>
-        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
-          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
-          <option name="timeStamp" value="3" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
       <option value=".github/instructions" />

@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using VPN.MVVM.ViewModel;
 
 namespace VPN;
 
@@ -11,8 +12,16 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        this.Loaded += MainWindow_Loaded;
     }
 
+    private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+    {
+        if (DataContext is ProtectionViewModel vm)
+        {
+            vm.ConnectCommand.Execute(null);
+        }
+    }
     private void TitleBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
         // Si la fenêtre est maximisée, la restaurer d'abord
