@@ -211,7 +211,8 @@ VPN/
 │   ├── ObservableObject.cs           # INotifyPropertyChanged base class
 │   ├── RelayCommand.cs               # ICommand implementation
 │   ├── ProtectionManager.cs          # Singleton server manager
-│   └── ServerPersistenceService.cs   # JSON persistence service
+│   ├── ServerPersistenceService.cs   # JSON persistence service
+│   └── Logger.cs                     # Thread-safe logging service
 │
 ├── MVVM/
 │   ├── Model/                        # Data structures
@@ -1052,7 +1053,57 @@ Example path:
 C:\Users\YourName\AppData\Roaming\VPNApp\servers.json
 ```
 
-### 8.2 JSON Schema
+### 8.2 Logging System
+
+**File:** `Core/Logger.cs`
+
+The application includes a comprehensive logging system that records all process outputs and exceptions to a file.
+
+**Log Location:**
+```
+%APPDATA%\VPNApp\logs\vpn.log
+```
+
+**Features:**
+- Thread-safe logging with lock mechanism
+- Automatic log rotation when file exceeds 5 MB
+- Timestamped entries
+- Process output logging (stdout/stderr)
+- Exception logging with stack traces
+- Different log levels (INFO, WARN, ERROR, EXCEPTION)
+
+**Usage Example:**
+```csharp
+// Log a simple message
+Logger.LogInfo("VPN connection initiated");
+
+// Log a warning
+Logger.LogWarning("Connection may be slow");
+
+// Log an error
+Logger.LogError("Failed to connect");
+
+// Log process output
+Logger.LogProcess("rasdial.exe", arguments, exitCode, stdout, stderr);
+
+// Log an exception
+Logger.LogException(ex, "ConnectToVPN");
+```
+
+**Sample Log Output:**
+```
+[2026-01-08 10:30:45.123] INFO: === Application VPN démarrée ===
+[2026-01-08 10:30:45.125] INFO: Dossier de logs: C:\Users\User\AppData\Roaming\VPNApp\logs
+[2026-01-08 10:30:50.456] INFO: Attempting to connect to us16.vpnbook.com...
+[2026-01-08 10:30:50.789] PROCESS: powershell.exe -Command "Add-VpnConnection..."
+[2026-01-08 10:30:50.790]   ExitCode: 0
+[2026-01-08 10:30:51.123] PROCESS: rasdial.exe "VPNBook_US16" "vpnbook" "***"
+[2026-01-08 10:30:51.124]   ExitCode: 0
+[2026-01-08 10:30:51.125]   stdout: Command completed successfully.
+[2026-01-08 10:30:51.126] INFO: Successfully connected to VPN!
+```
+
+### 8.3 JSON Schema
 
 ```json
 [
@@ -1068,7 +1119,7 @@ C:\Users\YourName\AppData\Roaming\VPNApp\servers.json
 ]
 ```
 
-### 8.3 Persistence Flow
+### 8.4 Persistence Flow
 
 ```
 User clicks "Add" in SettingsView

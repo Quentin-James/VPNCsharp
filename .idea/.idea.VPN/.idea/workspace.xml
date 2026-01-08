@@ -4,32 +4,12 @@
     <projectFile>VPN/VPN.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa3e0c79-df1a-414f-8951-fc1102e4f467" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/VPN/ANALYSIS_PROJECT_REPORT.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VPN/Core/ProtectionManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VPN/Core/ServerPersistenceService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VPN/Core/ServerService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VPN/Img/Flags/download_flags.ps1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VPN/MVVM/Model/CountryFlag.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VPN/MVVM/Model/ServerEntry.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VPN/MVVM/Model/ServerModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VPN/MVVM/Model/ServersEntry.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VPN/MVVM/Themes/ServerListTheme.Nord.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VPN/.idea/.name" beforeDir="false" />
+    <list default="true" id="fa3e0c79-df1a-414f-8951-fc1102e4f467" name="Changes" comment="Application finished">
+      <change afterPath="$PROJECT_DIR$/VPN/Core/Logger.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VPN/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VPN/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VPN/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/App.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VPN/Core/ObservableObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/Core/ObservableObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VPN/Core/RelayCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/Core/RelayCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VPN/MVVM/Themes/ConnectButton.Nord.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/MVVM/Themes/ConnectButton.Nord.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VPN/MVVM/View/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/MVVM/View/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VPN/MVVM/View/ProtectionView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/MVVM/View/ProtectionView.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VPN/MVVM/View/SettingsView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/MVVM/View/SettingsView.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VPN/MVVM/View/SettingsView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/MVVM/View/SettingsView.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VPN/MVVM/ViewModel/MainViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/MVVM/ViewModel/MainViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VPN/ANALYSIS_PROJECT_REPORT.md" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/ANALYSIS_PROJECT_REPORT.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VPN/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/App.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VPN/MVVM/ViewModel/ProtectionViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/MVVM/ViewModel/ProtectionViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VPN/MVVM/ViewModel/SettingsViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/MVVM/ViewModel/SettingsViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VPN/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/MainWindow.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VPN/VPN.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/VPN.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +24,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/VPN/App.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VPN/Core/Logger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/VPN/Core/ObservableObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/VPN/Core/ProtectionManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/VPN/Core/ServerService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -67,20 +48,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.Unnamed.executor": "Run",
-    ".NET Project.VPN.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "master",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "advanced.settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Project.VPN.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="VPN" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/VPN/bin/Debug/net10.0-windows/VPN.exe" />
@@ -114,8 +95,18 @@
       <workItem from="1767709942750" duration="13698000" />
       <workItem from="1767772930952" duration="2615000" />
       <workItem from="1767778930522" duration="7373000" />
-      <workItem from="1767787314947" duration="7487000" />
+      <workItem from="1767787314947" duration="7924000" />
+      <workItem from="1767887231895" duration="5805000" />
     </task>
+    <task id="LOCAL-00001" summary="Application finished">
+      <option name="closed" value="true" />
+      <created>1767799130236</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1767799130236</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,6 +114,10 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Application finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Application finished" />
+  </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
       <option value=".github/instructions" />

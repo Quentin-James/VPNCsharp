@@ -1,5 +1,16 @@
+# Build C#
 bin/
 obj/
-/packages/
-riderModule.iml
-/_ReSharper.Caches/
+publish/
+*.exe
+
+# Images (si tu veux les exclure)
+img/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Logs
+*.log

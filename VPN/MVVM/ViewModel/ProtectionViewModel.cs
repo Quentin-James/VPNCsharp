@@ -132,11 +132,13 @@ namespace VPN.MVVM.ViewModel
             {
                 LogMessage("Checking VPN connection configuration...");
                 
+                var arguments = $"-Command \"Add-VpnConnection -Name '{server.ConnectionName}' -ServerAddress '{server.Address}' -TunnelType Pptp -EncryptionLevel Optional -AuthenticationMethod MSChapv2 -RememberCredential -Force\"";
+                
                 // Create VPN connection using PowerShell
                 var psi = new ProcessStartInfo
                 {
                     FileName = "powershell.exe",
-                    Arguments = $"-Command \"Add-VpnConnection -Name '{server.ConnectionName}' -ServerAddress '{server.Address}' -TunnelType Pptp -EncryptionLevel Optional -AuthenticationMethod MSChapv2 -RememberCredential -Force\"",
+                    Arguments = arguments,
                     UseShellExecute = false,
                     CreateNoWindow = true,
                     RedirectStandardOutput = true,
@@ -147,13 +149,18 @@ namespace VPN.MVVM.ViewModel
                 if (process != null)
                 {
                     process.WaitForExit();
+                    string output = process.StandardOutput.ReadToEnd();
+                    string error = process.StandardError.ReadToEnd();
+                    
+                    // Log détaillé du processus
+                    Logger.LogProcess("powershell.exe", arguments, process.ExitCode, output, error);
+                    
                     if (process.ExitCode == 0)
                     {
                         LogMessage("VPN connection configured successfully.");
                     }
                     else
                     {
-                        string error = process.StandardError.ReadToEnd();
                         LogMessage($"Configuration warning (connection might already exist): {error}");
                     }
                 }
@@ -161,6 +168,7 @@ namespace VPN.MVVM.ViewModel
             catch (Exception ex)
             {
                 LogMessage($"Configuration note: {ex.Message} (connection might already exist)");
+                Logger.LogException(ex, "CreateVpnConnection");
             }
         }
 
@@ -171,11 +179,13 @@ namespace VPN.MVVM.ViewModel
                 LogMessage("Initiating VPN connection...");
                 ConnectionStatus = "Connecting...";
                 
+                var arguments = $"\"{server.ConnectionName}\" \"{server.Username}\" \"{server.Password}\"";
+                
                 // Use rasdial to connect
                 var psi = new ProcessStartInfo
                 {
                     FileName = "rasdial.exe",
-                    Arguments = $"\"{server.ConnectionName}\" \"{server.Username}\" \"{server.Password}\"",
+                    Arguments = arguments,
                     UseShellExecute = false,
                     CreateNoWindow = true,
                     RedirectStandardOutput = true,
@@ -188,6 +198,10 @@ namespace VPN.MVVM.ViewModel
                     vpnProcess.WaitForExit();
                     string output = vpnProcess.StandardOutput.ReadToEnd();
                     string error = vpnProcess.StandardError.ReadToEnd();
+                    
+                    // Log détaillé du processus (masquer le mot de passe)
+                    var safeArgs = $"\"{server.ConnectionName}\" \"{server.Username}\" \"***\"";
+                    Logger.LogProcess("rasdial.exe", safeArgs, vpnProcess.ExitCode, output, error);
 
                     if (vpnProcess.ExitCode == 0 || output.Contains("successfully", StringComparison.OrdinalIgnoreCase))
                     {
@@ -219,6 +233,7 @@ namespace VPN.MVVM.ViewModel
             catch (Exception ex)
             {
                 LogMessage($"Connection error: {ex.Message}");
+                Logger.LogException(ex, "ConnectToVPN");
                 ConnectionStatus = "Error";
                 IsConnected = false;
                 throw;
@@ -229,10 +244,12 @@ namespace VPN.MVVM.ViewModel
         {
             try
             {
+                var arguments = $"\"{connectionName}\" /disconnect";
+                
                 var psi = new ProcessStartInfo
                 {
                     FileName = "rasdial.exe",
-                    Arguments = $"\"{connectionName}\" /disconnect",
+                    Arguments = arguments,
                     UseShellExecute = false,
                     CreateNoWindow = true,
                     RedirectStandardOutput = true,
@@ -244,6 +261,10 @@ namespace VPN.MVVM.ViewModel
                 {
                     process.WaitForExit();
                     string output = process.StandardOutput.ReadToEnd();
+                    string error = process.StandardError.ReadToEnd();
+                    
+                    // Log détaillé du processus
+                    Logger.LogProcess("rasdial.exe", arguments, process.ExitCode, output, error);
                     
                     IsConnected = false;
                     ConnectionStatus = "Disconnected";
@@ -256,6 +277,7 @@ namespace VPN.MVVM.ViewModel
             catch (Exception ex)
             {
                 LogMessage($"Disconnection error: {ex.Message}");
+                Logger.LogException(ex, "DisconnectFromVPN");
                 throw;
             }
         }
@@ -265,6 +287,9 @@ namespace VPN.MVVM.ViewModel
             string timestamp = DateTime.Now.ToString("HH:mm:ss");
             LogMessages += $"\n[{timestamp}] {message}";
             OnPropertyChanged(nameof(LogMessages));
+            
+            // Écrire aussi dans le fichier de log
+            Logger.LogInfo(message);
         }
     }
 }
