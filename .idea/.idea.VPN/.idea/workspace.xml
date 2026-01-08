@@ -6,6 +6,35 @@
   <component name="ChangeListManager">
     <list default="true" id="fa3e0c79-df1a-414f-8951-fc1102e4f467" name="Changes" comment="Application finished">
       <change afterPath="$PROJECT_DIR$/VPN/Core/Logger.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Img/Flags/BE.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Img/Flags/CA.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Img/Flags/CH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Img/Flags/CL.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Img/Flags/DE.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Img/Flags/DK.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Img/Flags/ES.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Img/Flags/FI.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Img/Flags/FR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Img/Flags/GB.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Img/Flags/HK.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Img/Flags/IN.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Img/Flags/NZ.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Img/Flags/PL.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Img/Flags/RU.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Img/Flags/SE.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Img/Flags/SG.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Img/Flags/TR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Img/Flags/US.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Img/Flags/ZA.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/Img/MapWorld.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/publish/D3DCompiler_47_cor3.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/publish/PenImc_cor3.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/publish/PresentationNative_cor3.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/publish/VPN.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/publish/VPN.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/publish/vcruntime140_cor3.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VPN/publish/wpfgfx_cor3.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VPN/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VPN/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VPN/ANALYSIS_PROJECT_REPORT.md" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/ANALYSIS_PROJECT_REPORT.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VPN/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VPN/App.xaml.cs" afterDir="false" />
@@ -97,6 +126,7 @@
       <workItem from="1767778930522" duration="7373000" />
       <workItem from="1767787314947" duration="7924000" />
       <workItem from="1767887231895" duration="5805000" />
+      <workItem from="1767911971437" duration="567000" />
     </task>
     <task id="LOCAL-00001" summary="Application finished">
       <option name="closed" value="true" />
@@ -106,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767799130236</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Application finished">
+      <option name="closed" value="true" />
+      <created>1767912019679</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1767912019679</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
